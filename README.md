@@ -1,3 +1,3 @@
 # playlist
 
-schreibt die url in einen <p> Paragraphen in index.html
+schreibt die url in einen Paragraphen in index.html
