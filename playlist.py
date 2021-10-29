@@ -1,7 +1,12 @@
-import keyboard
+
 import time
 import requests
 import re
+import pynput
+
+keyboard = pynput.keyboard.Controller()
+
+
 time.sleep(2)
 
 findstring = r"<p>(.*)</p>"
@@ -21,6 +26,11 @@ for el in text:
 
 time.sleep(2)
 for el in playlist:
-    keyboard.write(";;play "+el)
-    keyboard.press("enter")
+    keyboard.type(";;play "+el)
+    keyboard.press(pynput.keyboard.Key.enter)
+    keyboard.release(pynput.keyboard.Key.enter)
     time.sleep(3.2)
+
+keyboard.type(";;repeat all")
+keyboard.press(pynput.keyboard.Key.enter)
+keyboard.release(pynput.keyboard.Key.enter)
